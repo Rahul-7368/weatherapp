@@ -22,6 +22,7 @@ function App() {
       setWeatherData(response.data);
     } catch (error) {
       setError('Failed to fetch weather data');
+      alert('Failed to fetch weather data');
     } finally {
       setLoading(false);
     }
@@ -39,7 +40,11 @@ function App() {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
+      <div>
       {loading && <p>Loading data…</p>}
+
+      </div>
+      {/* {loading && <p>Loading data…</p>} */}
       {error && <p className="error">{error}</p>}
       {weatherData && (
         <div className="weather-cards">
